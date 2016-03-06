@@ -166,11 +166,11 @@ class CollectionEngine extends BaseEngine
                 $keyword = $this->request->columnKeyword($i);
 
                 $this->collection = $this->collection->filter(
+
                     function ($row) use ($column, $column2, $keyword ) {
                         $data = $this->serialize($row);
 
                         $value = Arr::get($data, $column);
-
 
                         if (is_null($value)){
                             $value = Arr::get($data, $column2);

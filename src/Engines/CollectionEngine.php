@@ -171,6 +171,7 @@ class CollectionEngine extends BaseEngine
 
                         $value = Arr::get($data, $column);
 
+
                         if (is_null($value)){
                             $value = Arr::get($data, $column2);
                         }

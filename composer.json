@@ -1,12 +1,16 @@
 {
-    "name": "yajra/laravel-datatables-oracle",
+    "name": "marcha/laravel-datatables",
     "description": "jQuery DataTables API for Laravel 4|5",
     "keywords" : ["laravel4","laravel5","laravel","datatables","datatable","datatables jquery plugin"],
     "license": "MIT",
     "authors": [
         {
             "name": "Arjay Angeles",
-            "email": "aqangeles@gmail.com"
+            "email": "aqangeles@gmail.com",
+        },
+        {
+            "name": "Nikola Marcic",
+            "email": "marcic74@gmail.com",
         }
     ],
     "require": {
@@ -27,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Yajra\\Datatables\\": "src/"
+            "marcha\\Datatables\\": "src/"
         }
     },
     "minimum-stability": "stable"

@@ -161,13 +161,19 @@ class CollectionEngine extends BaseEngine
                 $this->isFilterApplied = true;
 
                 $column  = $this->getColumnName($i);
+                $column2 = (strpos($column, '.'))?$columns[$i]['data']:null;
+
                 $keyword = $this->request->columnKeyword($i);
 
                 $this->collection = $this->collection->filter(
-                    function ($row) use ($column, $keyword) {
+                    function ($row) use ($column, $column2, $keyword ) {
                         $data = $this->serialize($row);
 
                         $value = Arr::get($data, $column);
+
+                        if (is_null($value)){
+                            $value = Arr::get($data, $column2);
+                        }
 
                         if ($this->isCaseInsensitive()) {
                             return strpos(Str::lower($value), Str::lower($keyword)) !== false;
